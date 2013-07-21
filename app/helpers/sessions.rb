@@ -1,7 +1,11 @@
 helpers do
 
   def current_user
-    # TODO: return the current user if there is a user signed in.
+    if session[:user]
+      return User.find(session[:user].to_i)
+    else
+      return nil
+    end
   end
 
 end
